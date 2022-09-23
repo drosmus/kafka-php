@@ -1,0 +1,19 @@
+
+env:
+  CI_PLAN: KAFKA-PHP
+  CI_PROJECT: PDT
+
+  - label: "Unit Tests"
+    command: php tests/run-tests.php
+    plugins:
+      - ${DOCKER_COMPOSE_PLUGIN}:
+          run: test
+
+  - label: "Deploy"
+    command: script/deploy
+    branches: "pardot-kafka-php-0.1.6"
+    plugins:
+      - "ssh://git@git.dev.pardot.com/Pardot/pardot-buildkite-plugin.git":
+          upload:
+            local: "kafka-php-dev-*.tar.gz"
+            remote: "pd-composer-local/kafka-php/kafka-php/"
