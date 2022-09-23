@@ -19,7 +19,7 @@ services:
     image: wurstmeister/kafka:0.10.2.1
     depends_on:
       - zookeeper
-    environment:
+    environment:kafka-php-0.1.6
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_HOST_NAME: kafka-0.10.2.1
       KAFKA_ADVERTISED_PORT: 9092

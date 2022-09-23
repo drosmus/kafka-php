@@ -16,4 +16,4 @@ env:
       - "ssh://git@git.dev.pardot.com/Pardot/pardot-buildkite-plugin.git":
           upload:
             local: "kafka-php-dev-*.tar.gz"
-            remote: "pd-composer-local/kafka-php/kafka-php/"
+            remote: "pd-composer-local/kafka-php/"
